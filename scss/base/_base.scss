@@ -1,0 +1,26 @@
+
+// Enable border-box for all elements
+*, *:before, *:after {
+	box-sizing: border-box; 
+}
+
+// Enable font-smoothing
+html {
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+// Common styles for all layouts
+[class^="layout--"], [class*=" layout--"] {
+	
+}
+
+// Common styles for all sections
+[class^="section--"], [class*=" section--"] {
+	
+}
+
+// Common styles for all components
+[class^="component--"], [class*=" component--"] {
+	@extend %clearfix;
+}

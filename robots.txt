@@ -1,0 +1,5 @@
+# robotstxt.org/
+# This file disallows all indexing of the prototype. It should, obviously, be removed or altered for the live site.
+
+User-agent: *
+Disallow: /

@@ -1,0 +1,64 @@
+
+
+// Extent %clearfix where needed to fix margins on floated elements.
+
+%clearfix {
+	&:before,
+	&:after {
+		content: '';
+		display: table;
+	}
+	&:after {
+		clear: both;
+	}
+}
+
+
+// Extend .grid on any container element.
+
+.grid {
+	@extend %clearfix;
+	width: 100%;
+	margin: 0px auto;
+	max-width: $grid-max-width;
+	padding: 0 $grid-side-margin;
+	@media only screen and (max-width: $tablet) {
+		padding: 0 $grid-tablet-side-margin;
+	}
+	@media only screen and (max-width: $mobile) {
+		padding: 0 $grid-mobile-side-margin;
+	}
+}
+
+
+// Extend .column on any column inside a grid. Can be used outside a grid as well.
+// If you need a column with no padding, just write float: left; on the element instead.
+
+.column {
+	float: left;
+	padding: 0 $grid-gutter;
+	@media only screen and (max-width: $tablet) {
+		padding: 0 $grid-tablet-gutter;
+	}
+	@media only screen and (max-width: $mobile) {
+		padding: 0 $grid-mobile-gutter;
+	}
+}
+
+
+// Calculates the width of a column use this to modify width for columns in different media queries. 
+
+@mixin columns($span, $total : 1) {	
+	@if $total <= 1 {
+		width: 100% / $span;
+	} @else {
+		width: 100% / $total * $span;
+	}	
+}
+
+
+
+
+
+
+
